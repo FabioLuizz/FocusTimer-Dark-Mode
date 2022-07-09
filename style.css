@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+
+  --color-font: hsla(240, 6%, 21%, 1);
+  --background: #FFFFFF;
+  --bg-card: hsla(240, 9%, 89%, 1);
+  --bg-card-select: hsla(194, 97%, 31%, 1);
+  --color-icons: #323238;
+
+
+}
+
+.dark-theme {
+  --color-font: hsla(0, 0%, 100%, 1);
+  --background: hsla(240, 5%, 7%, 1);
+  --bg-card: hsla(240, 6%, 17%, 1);
+  --bg-card-select: hsla(195, 74%, 15%, 1);
+  --color-icons: hsla(240, 7%, 78%, 1);
+
+}
+
+body {
+  background: var(--background);
+
+  display: grid;
+
+  min-height: 100vh;
+
+}
+
+header {
+  display: grid;
+  justify-content: end;
+  flex-direction: row;
+
+  padding-top: 6rem;
+  padding-right: 6rem;
+
+}
+/* CORPO DO PROJETO */
+
+main {
+  display: flex;
+  align-self: flex-start; 
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(1rem, 0rem + 8vw, 19rem);
+
+  margin-bottom: 10rem;
+
+}
+
+/* CONFIGURAÇÃO DO TIMER E SEUS RESPECTIVOS BOTÕES */
+
+.timer {
+  display: flex ;
+
+  font-size: 12.7rem;
+  line-height: 14.7rem;
+  font-weight: 500;
+
+  color: var(--color-font);
+
+  padding-bottom: 1.7rem;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  gap: 4rem;
+
+}
+
+/* CONFIGURAÇÃO DOS CARDS */
+
+.cards {
+
+  display: grid;
+
+  padding-right: 0.5rem;
+
+  gap: 3.8rem;
+
+  grid-template-areas: 
+  'A B'
+  'C D';
+}
+
+.forest {
+  grid-area: 'A';
+}
+.rain {
+  grid-area: 'B';
+}
+.market {
+  grid-area: 'C';
+}
+.fire {
+  grid-area: 'D';
+}
+
+.card  {
+  width: 13.8rem;
+  height: 15.2rem;
+}
+
+.cards button {
+  width: 100%;
+  height: 100%;
+}
+
+/* CONFIGURAÇÂO PADRÃO DE CORES E CONFIGURAÇÃO AO SELECIONAR OS CARDS */
+
+/* BACKGROUND PADRÃO DOS CARDS */
+.cards svg path:nth-child(1) {
+  fill: var(--bg-card)
+}
+
+/* COR PADRÃO DOS ICONES E BOTÕES */
+.cards svg path:last-child,
+.buttons svg path {
+  fill: var(--color-icons)
+}
+
+/* BACKGROUND DOS CARDS DOS BOTÕES AO RECEBER A FUNÇÃO HOVER OU AO SER SELECIONADOS */
+.cards svg:hover path:nth-child(1),
+.buttons svg:hover path,
+.icons button svg:hover path:nth-child(1),
+.selected svg path:first-child{
+  fill: var(--bg-card-select);
+}
+
+/* COR DOS ICONES INTERNOS DOS CARDS AO RECEBER A FUNÇÃO HOVER OU AO SER SELECIONADOS */
+.cards button svg:hover path:nth-child(2),
+.cards button:hover input::-webkit-slider-thumb,
+.cards button:hover input,
+.selected svg path:nth-child(2) {
+  fill: white;
+}
+
+/* COR DA BARRA DE VOLUME AO RECEBER A FUNÇÃO HOVER */
+.cards button:hover + input,
+.cards button:hover + input::-webkit-slider-thumb {
+  background: white;
+}
+
+/* COR DA BARRA DE VOLUME AO SER SELECIONADA */
+.selected + input,
+.selected + input::-webkit-slider-thumb {
+  background: white;  
+}
+
+
+/* CONFIGURAÇÃO GERAL DE TODOS OS BOTÕES */
+
+button {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+/* ICONS */
+
+
+.hide {
+  display: none;
+}
+
+/* CONFIGURAÇÃO DA BARRA DE VOLUME */
+
+input {
+  cursor: pointer;
+
+  -webkit-appearance: none;
+
+  width: 9rem;
+  height: 0.4rem;
+
+  position: relative;
+  bottom: 4.5rem;
+  left: 2.3rem;
+
+  border-radius: 6rem;
+
+  background: var(--color-font);
+}
+
+input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+
+  background: var(--color-font);
+
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border-radius: 50%;
+}
+
+/* CONFIGURAÇÃO DO MEDIA */
+
+@media (max-width: 695px) {
+
+  :root{
+    margin: 0;
+  }
+
+  header {
+    display: grid;
+    justify-self: center;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    margin: 0;
+
+    min-width: 100vw;
+
+    padding: 0 1rem 0;
+  }
+
+  span {
+    margin: 0;
+    height: 14rem;
+  }
+}
