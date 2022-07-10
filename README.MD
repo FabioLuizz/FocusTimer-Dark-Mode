@@ -29,6 +29,11 @@ O tempo de foco padrão é de 25 minutos, mas pode ser alterado pelo usuário.
 
 ## Tecnologias utilizadas
 
+- Projeto disponível no [**Link**]()	
+- Figma do projeto disponível no [**Link**]()
+
+## Tecnologias utilizadas
+
 - **HTML** 
 
 - **CSS** 

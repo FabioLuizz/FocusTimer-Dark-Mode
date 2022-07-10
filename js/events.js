@@ -42,7 +42,6 @@ export default function Events({timer, sounds}) {
     fireButton.classList.remove('selected')
     marketButton.classList.remove('selected') 
     rainButton.classList.remove('selected')
-    forestVolume.classList.add(selected)
   })
 
   fireButton.addEventListener('click', function() {
